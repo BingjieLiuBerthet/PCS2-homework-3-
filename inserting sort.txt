@@ -1,0 +1,18 @@
+def ins(array):
+    swap = 0
+    for i in range(len(array)):
+        k = i
+        while k > 0 and array[k] < array[k-1]:
+            array[k-1], array[k] = array[k], array[k-1]
+            swap += 1
+            k -= 1
+   
+    return swap      
+
+if __name__ == "__main__":
+    with open('rosalind_ins.txt', 'r') as f:
+        f.readline()
+        s = [int(i) for i in f. readline().strip().split(' ')]
+        print(ins(s))
+
+
